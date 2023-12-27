@@ -15,9 +15,11 @@ namespace PROJETAKIP.Models.Personel
             this.PersonelProjeleris = new HashSet<PersonelProjeleri>();
         }
 
-
         [Key]
         public int PersonelBilgileriId { get; set; }
+
+        [DisplayName("Personel Görseli")]
+        public string PersonelGorseli { get; set; }
 
         [DisplayName("E-Posta Adresi")]  //label kısmında bu gözükür
         public string Eposta { get; set; }

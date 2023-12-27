@@ -18,6 +18,9 @@
             <thead>
                 <tr>
                     <th>
+                        Personel Görseli
+                    </th>
+                    <th>
                         @Html.DisplayNameFor(model => model.Eposta)
                     </th>
                     <th>
@@ -55,6 +58,9 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                        <td>
+                            <img src="@item.PersonelGorseli" style="width:80px; height:80px;"/>
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Eposta)
                         </td>

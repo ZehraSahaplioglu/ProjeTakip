@@ -31,6 +31,14 @@
                     </div>
 
                     <div class="mb-3 col-md-6">
+                        @Html.LabelFor(model => model.PersonelGorseli, htmlAttributes: new { @class = "control-label col-md-6" })
+                        <div class="input-group input-group-merge">
+                            <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-image"></i></span>
+                            <input class="form-control" type="text" id="PersonelGorseli" name="PersonelGorseli" value="">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 col-md-6">
                         @Html.LabelFor(model => model.TCNO, htmlAttributes: new { @class = "control-label col-md-4" })
                         <div class="input-group input-group-merge">
                             <span id="basic-icon-default-fullname2" class="input-group-text"><i class="bx bx-user-pin"></i></span>
@@ -204,7 +212,7 @@
 
                 <div class="mt-2">
                     <button type="submit" class="btn btn-primary me-2">Personel Oluştur</button>
-                    <a href="/PersonelBilgileris/Index/" class="btn btn-outline-secondary">Deri Dön</a>
+                    <a href="/PersonelBilgileris/Index/" class="btn btn-outline-secondary">Geri Dön</a>
                 </div>
 
             </form>
