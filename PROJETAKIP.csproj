@@ -128,6 +128,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonelBilgilerisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -452,6 +453,11 @@
     <Content Include="TEMA\scss\_theme\_common.scss" />
     <Content Include="TEMA\scss\_theme\_theme.scss" />
     <Content Include="TEMA\yarn.lock" />
+    <Content Include="Views\PersonelBilgileris\Create.cshtml" />
+    <Content Include="Views\PersonelBilgileris\Delete.cshtml" />
+    <Content Include="Views\PersonelBilgileris\Details.cshtml" />
+    <Content Include="Views\PersonelBilgileris\Edit.cshtml" />
+    <Content Include="Views\PersonelBilgileris\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
