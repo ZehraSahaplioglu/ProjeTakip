@@ -1,0 +1,75 @@
+﻿@model PROJETAKIP.Models.ProjeTakip.PersonelProjeleri
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PersonelProjeleri</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjeBaslik)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjeBaslik)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjeAciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjeAciklama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OlusturmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OlusturmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OncelikDurumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OncelikDurumu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamamlanmaOrani)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamamlanmaOrani)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamamlanmaTarihi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamamlanmaTarihi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TamamlanmaDurumu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TamamlanmaDurumu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PersonelProjeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
