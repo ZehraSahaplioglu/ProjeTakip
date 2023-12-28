@@ -59,10 +59,10 @@
                 {
                     <tr>
                         <td>
-                            <img src="@item.PersonelGorseli" style="width:80px; height:80px;"/>
+                            <img src="@item.PersonelGorseli" style="width:80px; height:80px;" class="rounded-circle"/>
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Eposta)
+                            <a href="mailto:@item.Eposta">@item.Eposta</a>
                         </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Sifre)
@@ -84,7 +84,7 @@
                         </td>
 
                         <td>
-                            @Html.DisplayFor(modelItem => item.TelNo)
+                            <a href="tel:@item.TelNo">@item.TelNo</a>
                         </td>
 
                         <td>

@@ -29,6 +29,12 @@ namespace PROJETAKIP.Controllers
         }
 
 
+        public ActionResult PersonelKart()
+        {
+            return View(db.PersonelBilgileris.ToList());
+        }
+
+
         // GET: PersonelBilgileris/Create
         public ActionResult Create()
         {
