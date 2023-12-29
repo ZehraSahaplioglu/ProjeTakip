@@ -461,8 +461,6 @@
     <Content Include="Views\PersonelBilgileris\Index.cshtml" />
     <Content Include="Views\PersonelBilgileris\PersonelKart.cshtml" />
     <Content Include="Views\PersonelProjeleris\Create.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Delete.cshtml" />
-    <Content Include="Views\PersonelProjeleris\Details.cshtml" />
     <Content Include="Views\PersonelProjeleris\Edit.cshtml" />
     <Content Include="Views\PersonelProjeleris\Index.cshtml" />
   </ItemGroup>

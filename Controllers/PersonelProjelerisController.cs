@@ -44,86 +44,34 @@ namespace PROJETAKIP.Controllers
         }
 
 
-        public ActionResult Details(int? id)
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PersonelProjeleri personelProjeleri = db.PersonelProjeleris.Find(id);
-            if (personelProjeleri == null)
-            {
-                return HttpNotFound();
-            }
-            return View(personelProjeleri);
+            var projeObj = db.PersonelProjeleris.Find(id);
+            return View(projeObj);
         }
 
-        
-
-        // GET: PersonelProjeleris/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PersonelProjeleri personelProjeleri = db.PersonelProjeleris.Find(id);
-            if (personelProjeleri == null)
-            {
-                return HttpNotFound();
-            }
-            return View(personelProjeleri);
-        }
-
-        // POST: PersonelProjeleris/Edit/5
-        // Aşırı gönderim saldırılarından korunmak için bağlamak istediğiniz belirli özellikleri etkinleştirin. 
-        // Daha fazla bilgi için bkz. https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "PersonelProjeId,ProjeBaslik,ProjeAciklama,OlusturmaTarihi,OncelikDurumu,TamamlanmaOrani,TamamlanmaTarihi,TamamlanmaDurumu")] PersonelProjeleri personelProjeleri)
+        public ActionResult Edit(PersonelProjeleri projeObj)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(personelProjeleri).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(personelProjeleri);
-        }
-
-        // GET: PersonelProjeleris/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            PersonelProjeleri personelProjeleri = db.PersonelProjeleris.Find(id);
-            if (personelProjeleri == null)
-            {
-                return HttpNotFound();
-            }
-            return View(personelProjeleri);
-        }
-
-        // POST: PersonelProjeleris/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            PersonelProjeleri personelProjeleri = db.PersonelProjeleris.Find(id);
-            db.PersonelProjeleris.Remove(personelProjeleri);
+            var projeDbObj = db.PersonelProjeleris.Find(projeObj.PersonelProjeId);
+            projeDbObj.ProjeAciklama = projeObj.ProjeAciklama;
+            projeDbObj.ProjeBaslik = projeObj.ProjeBaslik;
+            projeDbObj.TamamlanmaOrani = projeObj.TamamlanmaOrani;
+            projeDbObj.OncelikDurumu = projeObj.OncelikDurumu;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
+
+        public ActionResult Tamamla(int id)
         {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
+            var projeObj = db.PersonelProjeleris.Find(id);
+            projeObj.TamamlanmaDurumu = true;
+            projeObj.TamamlanmaOrani = 100;
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
+
+
     }
 }
