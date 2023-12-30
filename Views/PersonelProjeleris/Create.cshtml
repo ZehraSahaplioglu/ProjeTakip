@@ -13,7 +13,7 @@
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
-            <!-- Register Card -->
+            
             <div class="card">
                 <div class="card-body">
                     <!-- Logo -->
@@ -57,22 +57,23 @@
                         </a>
                     </div>
                     <!-- /Logo -->
+
                     <h4 class="mb-2">Görev Atama Programı 🚀</h4>
                     <p class="mb-4">Bu sayfadan personellerinize görev atayabilirsiniz!</p>
 
                     <form action="/PersonelProjeleris/Create" method="post">
 
-                        <div class="form-group">
+                        <div class="mb-3 col-md-12">
                             <label>Proje Başlığı</label>
                             <input class="form-control" name="ProjeBaslik" type="text" placeholder="Lütfen proje başlığını giriniz..." />
                         </div>
 
-                        <div class="form-group">
+                        <div class="mb-3 col-md-12">
                             <label>Proje Açıklaması</label>
                             <input class="form-control" name="ProjeAciklama" type="text" placeholder="Lütfen proje açıklamasını giriniz..." />
                         </div>
 
-                        <div class="mb-3 col-md-6">
+                        <div class="mb-3 col-md-12">
                             <label>Öncelik Durumu</label>
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-star"></i></span>
@@ -86,8 +87,9 @@
                         </div>
 
                         <div id="insert-section">
+                            <label>Personel Seçiniz: </label>
                             <div id="personel-select">
-                                <div class="form-group">
+                                <div class="mb-3 col-md-12">
                                     @Html.DropDownList("PersonelBilgileriId", null, htmlAttributes: new { @class = "form-control" })
                                     <i onclick="PersonelEkle()" class="bx bx-plus"></i>
                                 </div>

@@ -13,7 +13,7 @@
 <div class="container-xxl">
     <div class="authentication-wrapper authentication-basic container-p-y">
         <div class="authentication-inner">
-            <!-- Register Card -->
+            
             <div class="card">
                 <div class="card-body">
                     <!-- Logo -->
@@ -57,23 +57,24 @@
                         </a>
                     </div>
                     <!-- /Logo -->
+
                     <h4 class="mb-2">Proje Bilgilerini Düzenleme Sayfası 🚀</h4>
 
                     <form action="/PersonelProjeleris/Edit" method="post">
 
                         <input name="PersonelProjeId" value="@Model.PersonelProjeId" style="display:none" />
 
-                        <div class="form-group">
+                        <div class="mb-3 col-md-12">
                             <label>Proje Başlığı</label>
                             <input class="form-control" name="ProjeBaslik" type="text" value="@Model.ProjeBaslik" />
                         </div>
 
-                        <div class="form-group">
+                        <div class="mb-3 col-md-12">
                             <label>Proje Açıklaması</label>
                             <input class="form-control" name="ProjeAciklama" type="text" value="@Model.ProjeAciklama" />
                         </div>
 
-                        <div class="mb-3 col-md-6">
+                        <div class="mb-3 col-md-12">
                             <label>Öncelik Durumu</label>
                             <div class="input-group input-group-merge">
                                 <span id="basic-icon-default-company2" class="input-group-text"><i class="bx bx-star"></i></span>
@@ -87,7 +88,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
+                        <div class="mb-3 col-md-12">
                             <input oninput="OraniDuzenle(this)" name="TamamlanmaOrani" value="@Model.TamamlanmaOrani" style="width:100%" type="range" min="1" max="100" />
                         </div>
 
