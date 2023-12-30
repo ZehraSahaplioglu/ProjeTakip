@@ -465,6 +465,7 @@
     <Content Include="Views\PersonelProjeleris\Edit.cshtml" />
     <Content Include="Views\PersonelProjeleris\Index.cshtml" />
     <Content Include="Views\GenelBakis\Index.cshtml" />
+    <Content Include="Views\GenelBakis\GenelIstatistik.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
