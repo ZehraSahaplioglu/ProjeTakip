@@ -130,6 +130,7 @@
     <Compile Include="Controllers\ClassOncelikDurumAnaliz.cs" />
     <Compile Include="Controllers\GenelBakisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonelBilgilerisController.cs" />
     <Compile Include="Controllers\PersonelProjelerisController.cs" />
     <Compile Include="Controllers\ProjeRaporlariController.cs" />
@@ -471,6 +472,7 @@
     <Content Include="Views\ProjeRaporlari\TamamlanmisOncelikGruplari.cshtml" />
     <Content Include="Views\ProjeRaporlari\TamamlanmamisOncelikGruplari.cshtml" />
     <Content Include="Views\ProjeRaporlari\CanliDestek.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
