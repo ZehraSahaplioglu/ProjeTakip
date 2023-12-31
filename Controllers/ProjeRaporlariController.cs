@@ -34,5 +34,30 @@ namespace PROJETAKIP.Controllers
                 }).ToList();
             return snf;
         }
+
+
+        public ActionResult TamamlanmamisOncelikGruplari()
+        {
+            return View();
+        }
+
+        public ActionResult VisualizeTamamlanmamisDurumGruplari()
+        {
+            return Json(TamamlanmamisOncelikGrupTipi(), JsonRequestBehavior.AllowGet);  //grafik döndüreceği için json kullandık
+        }
+
+        //grafik oluşturacağımız class:
+        public List<ClassOncelikDurumAnaliz> TamamlanmamisOncelikGrupTipi()
+        {
+            ;
+            List<ClassOncelikDurumAnaliz> snf = new List<ClassOncelikDurumAnaliz>();
+            using (var c = new ProjeTakipDBContext())
+                snf = c.PersonelProjeleris.Where(x => x.TamamlanmaDurumu == false).GroupBy(p => p.OncelikDurumu).Select(x => new ClassOncelikDurumAnaliz
+                {
+                    onceliktipi = x.Key,
+                    oncelikadeti = x.Count(),
+                }).ToList();
+            return snf;
+        }
     }
 }

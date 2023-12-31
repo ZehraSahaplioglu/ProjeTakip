@@ -1,0 +1,96 @@
+﻿@model IEnumerable<PROJETAKIP.Models.ProjeTakip.PersonelProjeleri>
+
+@{
+    ViewBag.Title = "TamamlanmamisOncelikGruplari";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+
+    <div class="card card-info">
+
+        <div class="card-header">
+
+            <h3 class="card-title"><b>TAMAMLANMAMIŞ ÖNCELİK GRUP DAĞILIMI</b></h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <div id="TamamlanmamisGrafikChart_Div"></div>
+
+            <div id="TamamlanmamisAreaChart_Div"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+<script>
+
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "POST",
+                dataType: "json",
+                url: '@Url.Action("VisualizeTamamlanmamisDurumGruplari", "ProjeRaporlari")',
+                success: function (result) {
+                    google.charts.load('current', {
+                        'packages': ['corechart']
+                    });
+                    google.charts.setOnLoadCallback(function () {
+                        drawKategoriChart(result);
+                    });
+                }
+            });
+
+
+        });
+
+    function drawKategoriChart(result) {
+
+            var data = new google.visualization.DataTable();
+
+            data.addColumn('string', 'Öncelik');
+
+            data.addColumn('number', 'Proje Adı');
+
+            var dataArray = [];
+
+            $.each(result, function (i, obj) {
+
+                dataArray.push([obj.onceliktipi, obj.oncelikadeti]);
+
+            });
+
+            data.addRows(dataArray);
+
+            var mycolumnChartOptions = {
+                width: "100%",
+                height: 260,
+                pieHole: 0.4,
+                bar: { groupWidth: "100%" }
+            };
+
+
+            var mycolumnChart = new google.visualization.PieChart(document
+
+                .getElementById('TamamlanmamisGrafikChart_Div'));
+
+            mycolumnChart.draw(data, mycolumnChartOptions);
+
+
+            var mycolumnChart = new google.visualization.AreaChart(document
+
+                .getElementById('TamamlanmamisAreaChart_Div'));
+
+            mycolumnChart.draw(data, mycolumnChartOptions);
+
+    }
+
+</script>
