@@ -127,10 +127,12 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClassOncelikDurumAnaliz.cs" />
     <Compile Include="Controllers\GenelBakisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PersonelBilgilerisController.cs" />
     <Compile Include="Controllers\PersonelProjelerisController.cs" />
+    <Compile Include="Controllers\ProjeRaporlariController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -466,6 +468,7 @@
     <Content Include="Views\PersonelProjeleris\Index.cshtml" />
     <Content Include="Views\GenelBakis\Index.cshtml" />
     <Content Include="Views\GenelBakis\GenelIstatistik.cshtml" />
+    <Content Include="Views\ProjeRaporlari\TamamlanmisOncelikGruplari.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
