@@ -470,6 +470,7 @@
     <Content Include="Views\GenelBakis\GenelIstatistik.cshtml" />
     <Content Include="Views\ProjeRaporlari\TamamlanmisOncelikGruplari.cshtml" />
     <Content Include="Views\ProjeRaporlari\TamamlanmamisOncelikGruplari.cshtml" />
+    <Content Include="Views\ProjeRaporlari\CanliDestek.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

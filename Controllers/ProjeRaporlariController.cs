@@ -59,5 +59,14 @@ namespace PROJETAKIP.Controllers
                 }).ToList();
             return snf;
         }
+
+
+        // CANLI DESTEK
+        public ActionResult CanliDestek()
+        {
+            var destek = db.PersonelBilgileris.Where(x => x.Yetki == "Üst Yönetim");
+
+            return View(destek.ToList());
+        }
     }
 }
